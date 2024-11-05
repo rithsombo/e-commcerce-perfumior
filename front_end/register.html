@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Sign Up</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <div class="signup-form">
+          <h2>Sign up</h2>
+          <form id="signupForm">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            />
+
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Address"
+              required
+            />
+
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="6+ characters"
+              required
+            />
+
+            <button type="button" onclick="submitForm()" class="btn">
+              Create Account
+            </button>
+          </form>
+
+          <p>Already a member? <a href="login.html">Sign in</a></p>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/register.js"></script>
+  </body>
+</html>

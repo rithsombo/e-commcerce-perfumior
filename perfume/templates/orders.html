@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mx-auto p-8">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-semibold">Order List</h1>
+        </div>
+        <table class="min-w-full bg-gray-200 rounded-lg">
+            <thead>
+            <tr class="text-left text-gray-600">
+                <th class="py-3 px-4">ID</th>
+                <th class="py-3 px-4">Customer</th>
+                <th class="py-3 px-4">Order_date</th>
+                <th class="py-3 px-4">Total price</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for order in orders %}
+                <tr class="border-b border-gray-300 hover:bg-gray-300">
+                    <td class="py-3 px-4">{{ order['id'] }}</td>
+                    <td class="py-3 px-4">{{ order['name'] }}</td>
+                    <td class="py-3 px-4">${{ order['order_date'] }}</td>
+                    <td class="py-3 px-4">{{ order['total_price'] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

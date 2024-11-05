@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mx-auto p-8">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-semibold">Dashboard</h1>
+        </div>
+        <table class="min-w-full bg-gray-200 rounded-lg">
+            <thead>
+            <tr class="text-left text-gray-600">
+                <th class="py-3 px-4">ID</th>
+                <th class="py-3 px-4">Order_id</th>
+                <th class="py-3 px-4">Product</th>
+                <th class="py-3 px-4">Quantity</th>
+                <th class="py-3 px-4">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for orders_details in orders_detail %}
+                <tr class="border-b border-gray-300 hover:bg-gray-300">
+                    <td class="py-3 px-4">{{ orders_details['id'] }}</td>
+                    <td class="py-3 px-4">{{ orders_details['order_id'] }}</td>
+                    <td class="py-3 px-4">{{ orders_details['name'] }}</td>
+                    <td class="py-3 px-4">{{ orders_details['quantity'] }}</td>
+                <td class="py-3 px-4">${{ orders_details['price'] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
